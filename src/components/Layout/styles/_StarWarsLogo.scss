@@ -1,0 +1,10 @@
+.StarWarsLogo {
+  display: block;
+  width: 12rem;
+  margin-right: 2rem;
+  flex-wrap: wrap;
+
+  path {
+    fill: $color-primary;
+  }
+}

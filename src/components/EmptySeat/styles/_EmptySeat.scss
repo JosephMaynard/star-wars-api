@@ -1,0 +1,18 @@
+.EmptySeat {
+  background-color: #888;
+  border: solid 0.5rem #555;
+  border-radius: 1.5rem;
+  display: flex;
+  color: black;
+  max-width: 100%;
+  padding: 0.75rem;
+  width: $item-width;
+  min-height: 10rem;
+
+  &_label {
+    margin: auto;
+    color: black;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}

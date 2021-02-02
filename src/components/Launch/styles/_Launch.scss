@@ -1,0 +1,150 @@
+$animation-time: 3.5s;
+
+.Launch,
+.Launch_stars {
+  background-color: $color-background;
+  background-image: url('../../../images/star-background.jpg');
+  width: 100%;
+  height: 100vh;
+  perspective: 400px;
+
+  @include breakpoint('medium') {
+    background-size: 512px 512px;
+  }
+
+  @include breakpoint('mobile') {
+    background-size: 512px 512px;
+  }
+}
+
+.Launch {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  &_stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: luminosity;
+    opacity: 0;
+
+    &_1 {
+      animation: Launch_stars_1_animation $animation-time forwards linear;
+    }
+
+    &_2 {
+      animation: Launch_stars_2_animation $animation-time forwards linear;
+    }
+
+    &_3 {
+      animation: Launch_stars_3_animation $animation-time forwards linear;
+    }
+
+    &_4 {
+      animation: Launch_stars_4_animation $animation-time forwards linear;
+    }
+  }
+
+  &_text {
+    margin: auto;
+    font-size: 4rem;
+    position: relative;
+    transform-origin: 50% 50%;
+    animation: Launch_text_animation $animation-time forwards linear;
+  }
+
+  &_overlay {
+    animation: Launch_overlay_animation $animation-time forwards linear;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes Launch_text_animation {
+  0% {
+    opacity: 0;
+    transform: translateZ(-100rem);
+  }
+  20% {
+    opacity: 1;
+    transform: translateZ(-10rem);
+  }
+  50% {
+    opacity: 1;
+    transform: translateZ(10rem);
+  }
+  100% {
+    transform: translateZ(70rem);
+  }
+}
+
+@keyframes Launch_overlay_animation {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes Launch_stars_1_animation {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes Launch_stars_2_animation {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes Launch_stars_3_animation {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+@keyframes Launch_stars_4_animation {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.8);
+  }
+}

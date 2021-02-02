@@ -1,0 +1,46 @@
+.Layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'main';
+  width: 70rem;
+  margin: 0 auto;
+
+  @include breakpoint('small') {
+    width: 50rem;
+  }
+
+  @include breakpoint('large') {
+    width: 90rem;
+  }
+
+  &_header {
+    grid-area: header;
+    padding: 2rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &_title {
+      margin: 0;
+      font-size: 2.25rem;
+    }
+  }
+
+  &_main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 24rem 44fr;
+    grid-template-areas: 'search crewAndPassengers';
+
+    .Search {
+      grid-area: search;
+    }
+
+    .CrewAndPassengers {
+      grid-area: crewAndPassengers;
+    }
+  }
+}
